@@ -1,18 +1,16 @@
-string[] str = Console.ReadLine().Split(' ');
-            int[] d = Array.ConvertAll(str, int.Parse);
-            Array.Sort(d);
-            int g;
+string[] threeD = Console.ReadLine().Split();
+            int[] dice = Array.ConvertAll(threeD, int.Parse);
+            Array.Sort(dice);
 
-            if ((d[0] == d[1]) && (d[1] == d[2]) && (d[0] == d[2]))
+            if ((dice[0] == dice[1]) && (dice[1] == dice[2]) && (dice[0] == dice[2]))
             {
-                g = 10000 + d[0] * 1000;
+                Console.WriteLine(10000 + dice[0] * 1000);
             }
-            else if ((d[0] == d[1]) || (d[1] == d[2]) || (d[0] == d[2]))
+            else if ((dice[0] == dice[1]) || (dice[1] == dice[2]) || (dice[0] == dice[2]))
             {
-                g = 1000 + d[1] * 100;
+                Console.WriteLine(1000 + dice[1] * 100);
             }
             else
             {
-                g = d[2] * 100;
+                Console.WriteLine(dice[2] * 100);
             }
-            Console.WriteLine(g);
