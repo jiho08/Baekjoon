@@ -1,30 +1,28 @@
-string[] nm = Console.ReadLine().Split();
+int[] nm = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+            int n = nm[0];
+            int m = nm[1];
+            int[] basket = new int[n];
+            int h = 0;
 
-            int n = int.Parse(nm[0]);
-            int m = int.Parse(nm[1]);
-
-            int[] N = new int[n];
-
-            int i;
-            int temp;
-            for(i = 0; i < N.Length; i++)
+            for (int i = 0; i < basket.Length; i++)
             {
-                N[i] = i + 1;
+                basket[i] = i + 1;
             }
-            for(i = 0; i<m; i++)
-            {
-                string[] ab = Console.ReadLine().Split();
-                int a = int.Parse(ab[0])-1;
-                int b = int.Parse(ab[1])-1;
 
-                while (a < b)
+            for (int a = 0; a < m; a++)
+            {
+                int[] ij = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+                int i = ij[0] - 1;
+                int j = ij[1] - 1;
+                while (i < j)
                 {
-                    temp = N[a];
-                    N[a++] = N[b];
-                    N[b--] = temp;
+                    h = basket[i];
+                    basket[i++] = basket[j];
+                    basket[j--] = h;
                 }
             }
-            for(i = 0; i < N.Length; i++)
+
+            for (int i = 0; i < n; i++)
             {
-                Console.Write(N[i] + " ");
+                Console.Write($"{basket[i]} ");
             }
