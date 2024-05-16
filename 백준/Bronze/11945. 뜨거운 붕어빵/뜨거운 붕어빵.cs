@@ -1,14 +1,12 @@
-StreamReader sr = new StreamReader(new BufferedStream(Console.OpenStandardInput()));
-            StreamWriter sw = new StreamWriter(new BufferedStream(Console.OpenStandardOutput()));
-
-            int[] nm = Array.ConvertAll(sr.ReadLine().Split(), int.Parse);
-            int n = nm[0];
-            
-            for (int i = 0; i < n; i++)
+int[] n = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+        char[] st = new char[n[1]];
+        for (int i = 0; i < n[0]; i++)
+        {
+            string s = Console.ReadLine();
+            for (int j = 0; j < n[1]; j++)
             {
-                var str = sr.ReadLine();
-                sw.WriteLine(new string(str.Reverse().ToArray()));
+                st[j] = s[j];
             }
-
-            sr.Close();
-            sw.Close();
+            Array.Reverse(st);
+            Console.WriteLine(st);
+        }
