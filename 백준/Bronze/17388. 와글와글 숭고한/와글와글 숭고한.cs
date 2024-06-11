@@ -10,9 +10,7 @@ int[] r = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
             {
                 c++;
                 if (item == r[0])
-                {
                     Console.Write(s[c]);
-                }
             }
         }
         else
