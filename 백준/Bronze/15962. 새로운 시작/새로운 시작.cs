@@ -1,0 +1,1 @@
+Console.Write("파이팅!!");
