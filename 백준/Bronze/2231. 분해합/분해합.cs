@@ -1,25 +1,26 @@
 int n = int.Parse(Console.ReadLine());
-            string s = "";
             int r = 0;
+            int i;
 
-            for (int i = 1; i <= n; ++i)
+            for (i = 1; i <= n; ++i)
             {
                 r = 0;
-                s = i.ToString();
+                int s = i;
 
-                for (int j = 0; j < s.Length; ++j)
+                while (s != 0)
                 {
-                    r += int.Parse(s[j].ToString());
+                    r += s % 10;
+                    s /= 10;
                 }
 
-                if (int.Parse(s) + r == n)
+                if (i + r == n)
                 {
-                    Console.WriteLine(s);
+                    Console.WriteLine(i);
                     break;
                 }
             }
 
-            if (int.Parse(s) + r != n)
+            if (i + r != n)
             {
                 Console.WriteLine(0);
             }
