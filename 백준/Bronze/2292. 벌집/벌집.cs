@@ -1,15 +1,9 @@
-int n = int.Parse(Console.ReadLine());
-            int r = 2;
-            int s = 6;
-            int c = 1;
+int n = int.Parse(Console.ReadLine()), s = 1, c = 1;
 
-            for (int i = 1; i <= n; ++i)
+            while (n > s)
             {
-                if (i == r)
-                {
-                    ++c;
-                    r += s;
-                    s += 6;
-                }
+                s += 6 * c;
+                ++c;
             }
+
             Console.Write(c);
