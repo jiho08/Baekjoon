@@ -1,15 +1,2 @@
 int n = int.Parse(Console.ReadLine());
-            int s = 0;
-
-            while (true)
-            {
-                n -= 5;
-                ++s;
-
-                if (n <= 0)
-                {
-                    break;
-                }
-            }
-
-            Console.Write(s);
+            Console.Write(n % 5 == 0? n / 5 : n / 5 + 1);
