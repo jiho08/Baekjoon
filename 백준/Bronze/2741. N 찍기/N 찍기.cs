@@ -1,9 +1,10 @@
-using System.Text;
-int n = int.Parse(Console.ReadLine());
+StreamReader r = new StreamReader(new BufferedStream(Console.OpenStandardInput()));
+            StreamWriter w = new StreamWriter(new BufferedStream(Console.OpenStandardOutput()));
 
-            StringBuilder allNum = new StringBuilder();
-            for ( int i = 1; i <= n; i++)
-            {
-                allNum.AppendLine(i.ToString());
-            }
-            Console.WriteLine(allNum);
+            int n = int.Parse(r.ReadLine());
+
+            for (int i = 1; i <= n; ++i)
+                w.WriteLine(i);
+
+            r.Close();
+            w.Close();
