@@ -10,10 +10,7 @@ StreamReader r = new StreamReader(new BufferedStream(Console.OpenStandardInput()
             {
                 string p = new string(s.Reverse().ToArray());
 
-                if (s == p)
-                    w.WriteLine("yes");
-                else
-                    w.WriteLine("no");
+                w.WriteLine(s == p ? "yes" : "no");
 
                 s = r.ReadLine();
             }
