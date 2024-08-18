@@ -4,7 +4,7 @@
 
 ### 성능 요약
 
-메모리: 5364 KB, 시간: 48 ms
+메모리: 5360 KB, 시간: 44 ms
 
 ### 분류
 
@@ -12,13 +12,13 @@
 
 ### 제출 일자
 
-2024년 8월 18일 23:51:42
+2024년 8월 19일 00:04:40
 
 ### 문제 설명
 
 <p>토카는 문자열을 출력하는 파이썬 코드를 작성하는 것에 자신감이 있었다. 어느 날 <code><span data-darkreader-inline-color="" style="color: rgb(231, 76, 60); --darkreader-inline-color: #e95849;">Hello, World!</span></code>를 출력해달라는 요청을 받은 토카는 자신있게 코드를 작성했지만, 큰따옴표를 찍지 않는 치명적인 실수로 인해 컴파일 에러를 받고 말았다!!</p>
 
-<p style="text-align: center;"><img alt="" src="" style="height: 145px; width: 500px;"></p>
+<p style="text-align: center;"><img alt="" src="https://upload.acmicpc.net/d2d0ac63-8f34-45b0-ae65-9802427da1a1/-/preview/" style="height: 145px; width: 500px;"></p>
 
 <p style="text-align: center;"><small>컴파일 에러를 받은 토카의 코드</small></p>
 
