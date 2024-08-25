@@ -3,23 +3,22 @@
 using namespace std;
 
 int main() {
-  int socks[5];
-  for (int i = 0; i < 5; i++) {
-    cin >> socks[i];
-  }
+	int s[5];
+	for (int i = 0; i < 5; i++)
+		cin >> s[i];
 
-  unordered_set<int> unique;
-  for (int i = 0; i < 5; i++) {
-    if (unique.find(socks[i]) == unique.end()) {
-      unique.insert(socks[i]);
-    } else {
-      unique.erase(socks[i]);
-    }
-  }
+	unordered_set<int> u;
 
-  for (int i : unique) {
-    cout << i;
-  }
+	for (int i = 0; i < 5; i++)
+	{
+		if (u.find(s[i]) == u.end())
+			u.insert(s[i]);
+		else
+			u.erase(s[i]);
+	}
 
-  return 0;
+	for (int i : u)
+		cout << i;
+
+	return 0;
 }
