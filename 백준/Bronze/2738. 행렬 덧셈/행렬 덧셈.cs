@@ -1,28 +1,33 @@
-int[] r = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+StreamWriter w = new StreamWriter(new BufferedStream(Console.OpenStandardOutput()));
+            StreamReader r = new StreamReader(new BufferedStream(Console.OpenStandardInput()));
 
-            int[,] a = new int[r[0], r[1]];
-            int[,] b = new int[r[0], r[1]];
+            int[] v = Array.ConvertAll(r.ReadLine().Split(), int.Parse);
 
-            for (int i = 0; i < r[0]; ++i)
+            int[,] a = new int[v[0], v[1]];
+
+            for (int i = 0; i < v[0]; ++i)
             {
-                int[] t = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+                int[] t = Array.ConvertAll(r.ReadLine().Split(), int.Parse);
 
-                for (int j = 0; j < r[1]; ++j)
+                for (int j = 0; j < v[1]; ++j)
                     a[i, j] = t[j];
             }
 
-            for (int i = 0; i < r[0]; ++i)
+            for (int i = 0; i < v[0]; ++i)
             {
-                int[] t = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+                int[] t = Array.ConvertAll(r.ReadLine().Split(), int.Parse);
 
-                for (int j = 0; j < r[1]; ++j)
-                    b[i, j] = t[j];
+                for (int j = 0; j < v[1]; ++j)
+                    a[i, j] += t[j];
             }
 
-            for (int i = 0; i < r[0]; ++i)
+            for (int i = 0; i < v[0]; ++i)
             {
-                for (int j = 0; j < r[1]; ++j)
-                    Console.Write($"{a[i, j] + b[i, j]} ");
+                for (int j = 0; j < v[1]; ++j)
+                    w.Write($"{a[i, j]} ");
 
-                Console.WriteLine();
+                w.WriteLine();
             }
+
+            w.Close();
+            r.Close();
