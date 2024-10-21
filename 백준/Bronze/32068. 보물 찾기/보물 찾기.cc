@@ -9,18 +9,13 @@ int main()
 
 	for (int i = 0; i < t; ++i)
 	{
-		int l, r, s, q = 1;
+		int l, r, s;
 		cin >> l >> r >> s;
 
-		while (true)
-		{
-			q % 2 == 0 ? s -= q : s += q;
+		l = abs(l - s);
+		r = abs(r - s);
 
-			++q;
-
-			if (s == l || s == r)
-				break;
-		}
+		int q = l < r ? l * 2 + 1 : r * 2;
 
 		cout << q << '\n';
 	}
