@@ -4,10 +4,10 @@ using namespace std;
 
 int main()
 {
-	int t;
+	float t;
 	cin >> t;
 
-	float p = (float)t / 2.0f;
+	t /= 2.0f;
 
-	cout << (int)(p * p + 0.5);
+	cout << (int)(t * t + 0.5);
 }
