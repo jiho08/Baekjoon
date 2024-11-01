@@ -8,11 +8,11 @@ int main()
 	double a, b;
 	cin >> a >> b;
 
-	double plus = -a + sqrt(a * a - b);
-	double minus = -a - sqrt(a * a - b);
+	double x = -a + sqrt(a * a - b);
+	double y = -a - sqrt(a * a - b);
 
-	if (plus == minus)
-		cout << plus;
+	if (x == y)
+		cout << x;
 	else
-		cout << minus << ' ' << plus;
+		cout << y << ' ' << x;
 }
