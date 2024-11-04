@@ -6,14 +6,21 @@ int main()
 {
 	ios::sync_with_stdio(0);
 
+	bool x = false, y = false;
 	int a, b;
 	cin >> a >> b;
 
-	if (a == b || (a == 1 || a == 3 || a == 4) && (b == 1 || b == 3 || b == 4))
+	if (a == 1 || a == 3 || a == 4)
+		x = true;
+
+	if (b == 1 || b == 3 || b == 4)
+		y = true;
+
+	if (a == b || x && y)
 		cout << '=';
-	else if (a == 1 || a == 3 || a == 4)
+	else if (x)
 		cout << '<';
-	else if (b == 1 || b == 3 || b == 4)
+	else if (y)
 		cout << '>';
 	else
 		if (a == 0)
