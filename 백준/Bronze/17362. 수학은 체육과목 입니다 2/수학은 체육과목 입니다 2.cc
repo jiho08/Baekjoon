@@ -2,31 +2,17 @@
 
 using namespace std;
 
-int main()
-{
-	ios::sync_with_stdio(0);
+int main() {
+    int n;
+    cin >> n;
 
-	int n,c = 0;
-	bool b = true;
-	cin >> n;
-
-	for (int i = 0; i < n; ++i)
-	{
-		if (b)
-		{
-			++c;
-
-			if (c == 5)
-				b = false;
-		}
-		else
-		{
-			--c;
-
-			if (c == 1)
-				b = true;
-		}
-	}
-
-	cout << c;
+    n %= 8;
+    
+    if (n == 1) cout << 1;
+    else if (n == 2 || n == 0) cout << 2;
+    else if (n == 3 || n == 7) cout << 3;
+    else if (n == 4 || n == 6) cout << 4;
+    else if (n == 5) cout << 5;
+    
+    return 0;
 }
