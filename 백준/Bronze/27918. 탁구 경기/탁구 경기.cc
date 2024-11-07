@@ -11,10 +11,10 @@ int main()
 
 	for (int i = 0; i < n; ++i)
 	{
-		string s;
+		char s;
 		cin >> s;
 
-		s == "D" ? ++d : ++p;
+		s == 'D' ? ++d : ++p;
 
 		if (abs(d - p) > 1)
 			break;
