@@ -1,27 +1,29 @@
 #include <iostream>
+#include <string>
+
 using namespace std;
-int cnt[26], n, answer;
-string song;
+
 int main()
 {
-    ios::sync_with_stdio(0), cin.tie(0);
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cout.tie(nullptr);
 
-    cin >> n;
-    cin.ignore();
-    getline(cin, song);
+	int alphabet[26] = {};
+	int n, max = 0;
+	string song;
 
-    for (char c : song)
-    {
-        if (c >= 'a' && c <= 'z') // 소문자인지 확인
-        {
-            ++cnt[c - 'a'];
-        }
-    }
+	cin >> n;
+	cin.ignore();
+	getline(cin, song);
 
-    for (int ret : cnt)
-    {
-        answer = max(answer, ret);
-    }
+	for (char c : song)
+		if (c >= 'a' && c <= 'z')
+			++alphabet[c - 'a'];
 
-    cout << answer;
+	for (int i : alphabet)
+		if (max < i)
+			max = i;
+
+	cout << max;
 }
