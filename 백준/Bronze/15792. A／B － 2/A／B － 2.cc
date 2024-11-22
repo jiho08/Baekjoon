@@ -9,8 +9,17 @@ int main()
 	cin.tie(nullptr);
 	cout.tie(nullptr);
 
-	long double a, b;
+	long long a, b;
 	cin >> a >> b;
 
-	cout << a / b;
+	cout << a / b << '.';
+
+	a %= b;
+
+	for (int i = 0; i < 2000; ++i)
+	{
+		a *= 10;
+		cout << a / b;
+		a %= b;
+	}
 }
