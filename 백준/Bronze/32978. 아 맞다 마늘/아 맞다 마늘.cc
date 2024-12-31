@@ -12,25 +12,23 @@ int main()
 	cin.tie(nullptr);
 	cout.tie(nullptr);
 
+	string s;
+	set<string> recipe;
 	int n;
 	cin >> n;
 
-	vector<string> recipe(n), myRecipe(n - 1);
 
 	for (int i = 0; i < n; ++i)
-		cin >> recipe[i];
+	{
+		cin >> s;
+		recipe.insert(s);
+	}
 
 	for (int i = 0; i < n - 1; ++i)
-		cin >> myRecipe[i];
+	{
+		cin >> s;
+		recipe.erase(s);
+	}
 
-	set<string> r1(recipe.begin(), recipe.end());
-	set<string> r2(myRecipe.begin(), myRecipe.end());
-
-	set<string> diff;
-	set_difference(r1.begin(), r1.end(), r2.begin(), r2.end(), inserter(diff, diff.end()));
-
-	for (auto str : diff)
-		cout << str << "\n";
-
-	return 0;
+	cout << *recipe.begin();
 }
