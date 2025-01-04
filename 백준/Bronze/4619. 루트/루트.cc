@@ -1,27 +1,33 @@
 #include <iostream>
-#include <cmath> // abs, pow
+#include <cmath>
+
 using namespace std;
 
-int main() {
-    while (true) {
-        int b, p;
-        cin >> b >> p;
-        if (b == 0 && p == 0) break;
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cout.tie(nullptr);
 
-        int a = 1;
-        while (pow(a, p) < b) {
-            a++;
-        }
+	while (true)
+	{
+		int b, p;
+		cin >> b >> p;
 
-        int lower = pow(a - 1, p);
-        int upper = pow(a, p);
+		if (b == 0 && p == 0)
+			break;
 
-        if (abs(b - lower) <= abs(b - upper)) {
-            cout << a - 1 << endl;
-        } else {
-            cout << a << endl;
-        }
-    }
+		int a = 1;
 
-    return 0;
+		while (pow(a, p) < b)
+			a++;
+
+		int lower = pow(a - 1, p);
+		int upper = pow(a, p);
+
+		if (abs(b - lower) <= abs(b - upper))
+			cout << a - 1 << '\n';
+		else
+			cout << a << '\n';
+	}
 }
