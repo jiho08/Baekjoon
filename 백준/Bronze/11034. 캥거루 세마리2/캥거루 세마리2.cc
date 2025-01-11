@@ -26,14 +26,12 @@ int main()
 
             if (x > y)
             {
-                c = b;
-                --b;
+                c = b--;
                 ++count;
             }
             else
             {
-                a = b;
-                ++b;
+                a = b++;
                 ++count;
             }
         }
