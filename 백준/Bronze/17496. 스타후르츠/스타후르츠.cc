@@ -10,8 +10,5 @@ int main()
 
 	int n, t, c, p;
 	cin >> n >> t >> c >> p;
-
-	--n;
-	n /= t;
-	cout << n * c * p;
+	cout << --n / t * c * p;
 }
