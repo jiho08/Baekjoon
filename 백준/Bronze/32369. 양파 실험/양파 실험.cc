@@ -4,25 +4,28 @@ using namespace std;
 
 int main()
 {
-    ios::sync_with_stdio(0), cin.tie(0);
-    
-    int N, A, B, a = 1, b = 1;
-    cin >> N >> A >> B;
-    
-    while (N--)
-    {
-        a += A;
-        b += B;
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cout.tie(nullptr);
 
-        if (a < b)
-        {
-            swap(a, b);
-        }
-        else if (a == b)
-        {
-            --b;
-        }
-    }
-    
-    cout << a << " " << b;
+	int n, a, b, x = 1, y = 1;
+	cin >> n >> a >> b;
+
+	for (int i = 0; i < n; ++i)
+	{
+		x += a;
+		y += b;
+
+		if (y > x)
+		{
+			int t = x;
+			x = y;
+			y = t;
+		}
+
+		if (x == y)
+			--y;
+	}
+
+	cout << x << ' ' << y;
 }
