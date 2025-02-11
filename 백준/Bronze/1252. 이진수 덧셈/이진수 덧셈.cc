@@ -13,14 +13,13 @@ int main()
     string a, b;
     cin >> a >> b;
 
-    int lenA = a.size(), lenB = b.size();
-    int maxLen = max(lenA, lenB);
+    int maxLen = max(a.size(), b.size());
 
-    while
-	(a.size() < maxLen) a = '0' + a;
+    while (a.size() < maxLen)
+        a = '0' + a;
 
-    while
-	(b.size() < maxLen) b = '0' + b;
+    while (b.size() < maxLen)
+        b = '0' + b;
 
     string result;
     int carry = 0;
