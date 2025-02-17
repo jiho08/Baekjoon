@@ -25,5 +25,5 @@ int main()
 		if (i[0] == 'p')
 			c = true;
 
-	cout << (a == true && b == true && c == true ? "GLOBAL" : "PONIX");
+	cout << (a && b && c ? "GLOBAL" : "PONIX");
 }
