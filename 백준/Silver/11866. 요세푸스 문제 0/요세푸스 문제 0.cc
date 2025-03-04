@@ -31,9 +31,8 @@ int main()
 		}
 		else
 		{
-			int t = q.front();
+            q.push(q.front());
 			q.pop();
-			q.push(t);
 		}
 
 	cout << '>';
