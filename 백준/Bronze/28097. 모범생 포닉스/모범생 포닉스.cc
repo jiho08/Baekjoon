@@ -8,17 +8,18 @@ int main()
 	cin.tie(nullptr);
 	cout.tie(nullptr);
 
-	int n, d = 0, h = 0;
+	int n, d = 0;
 	cin >> n;
 
-	for (int i = 0; i < n; ++i)
+	int h = (n - 1) * 8;
+
+	while (n--)
 	{
 		int t;
 		cin >> t;
 		h += t;
 	}
 
-	h += (n - 1) * 8;
 
 	if (h > 24)
 	{
