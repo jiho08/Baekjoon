@@ -12,50 +12,35 @@ int main()
 	cin.tie(nullptr);
 	cout.tie(nullptr);
 
-	bool flag = false;
-	int n, max = 0;
+	int n, most = 0;
 	double sum = 0;
 	cin >> n;
 
 	vector<int> v(n);
+	vector<int> modes;
 	map<int, int> m;
-	pair<int, int> p = { 0, 0 };
 
 	for (int& i : v)
 	{
 		cin >> i;
-
-		if (m.count(i))
-			++m[i];
-		else
-			m[i] = 1;
+		++m[i];
+		sum += i;
 	}
 
 	sort(v.begin(), v.end());
 
-	for (const int i : v)
-		sum += i;
+	for (const auto& a : m)
+		most = max(a.second, most);
 
 	for (const auto& a : m)
-		max = std::max(a.second, max);
+		if (a.second == most)
+			modes.push_back(a.first);
 
-	for (int i : v)
-	{
-		if (m[i] > p.second)
-		{
-			p.first = i;
-			p.second = m[i];
-		}
-		else if (m[i] == max && i != p.first && !flag)
-		{
-			p.first = i;
-			p.second = m[i];
-			flag = true;
-		}
-	}
+	sort(modes.begin(), modes.end());
+	const int mode = (modes.size() > 1 ? modes[1] : modes[0]);
 
 	cout << (round(sum / n) == -0 ? 0 : round(sum / n)) << '\n';
 	cout << v[n / 2] << '\n';
-	cout << p.first << '\n';
+	cout << mode << '\n';
 	cout << v[n - 1] - v[0];
 }
