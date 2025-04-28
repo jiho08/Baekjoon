@@ -1,17 +1,6 @@
 #include <algorithm>
 #include <iostream>
-#include <cmath>
-#include <list>
-#include <string>
-#include <set>
 #include <vector>
-#include <queue>
-#include <stack>
-#include <sstream>
-#include <deque>
-#include <map>
-#include <unordered_map>
-#include <tuple>
 
 using namespace std;
 
