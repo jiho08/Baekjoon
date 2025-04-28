@@ -1,36 +1,53 @@
+#include <algorithm>
 #include <iostream>
+#include <cmath>
+#include <list>
 #include <string>
+#include <set>
 #include <vector>
+#include <queue>
+#include <stack>
+#include <sstream>
+#include <deque>
+#include <map>
+#include <unordered_map>
+#include <tuple>
+
 using namespace std;
 
 int main()
 {
-	int n, m, s = 0;
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cout.tie(nullptr);
+
+	int n, m, count = 0;
 	cin >> n >> m;
 
-	int* r = new int[n];
+	vector<int> v(n);
 
-	for (int i = 0; i < n; ++i)
-		cin >> r[i];
+	for (int& i : v)
+		cin >> i;
 
-	for (int i = 0; i < n; ++i)
-		for (int j = 0; j < n; ++j)
+	sort(v.begin(), v.end());
+
+	int left = 0, right = n - 1;
+
+	while (left < right)
+	{
+		const int sum = v[left] + v[right];
+
+		if (sum < m)
+			++left;
+		else if (sum > m)
+			--right;
+		else if (sum == m)
 		{
-			if (i == j)
-				continue;
-
-			if (r[i] == -1 || r[j] == -1)
-				continue;
-
-			if (r[i] + r[j] != m)
-				continue;
-
-			++s;
-			r[i] = -1;
-			r[j] = -1;
+			++count;
+			++left;
+			--right;
 		}
+	}
 
-	cout << s;
-
-	return 0;
+	cout << count;
 }
