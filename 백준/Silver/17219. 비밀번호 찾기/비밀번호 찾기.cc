@@ -1,5 +1,5 @@
 #include <iostream>
-#include <map>
+#include <unordered_map>
 
 using namespace std;
 
@@ -12,20 +12,18 @@ int main()
 	int n, m;
 	cin >> n >> m;
 
-	map<string, string> site;
+	unordered_map<string, string> site;
+	string x, y;
 
 	while (n--)
 	{
-		string x, y;
 		cin >> x >> y;
 		site[x] = y;
 	}
 
 	while (m--)
 	{
-		string s;
-		cin >> s;
-
-		cout << site[s] << '\n';
+		cin >> x;
+		cout << site[x] << '\n';
 	}
 }
