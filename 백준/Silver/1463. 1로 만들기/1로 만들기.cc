@@ -19,17 +19,17 @@ int main()
 
 	for (int i = 2; i <= n; ++i)
 	{
-		int temp = INT16_MAX;
+		int prev = INT16_MAX;
 
 		if (i % 3 == 0)
-			temp = v[i / 3];
+			prev = v[i / 3];
 
 		if (i % 2 == 0)
-			temp = min(temp, v[i / 2]);
+			prev = min(prev, v[i / 2]);
 
-		temp = min(temp, v[i - 1]);
+		prev = min(prev, v[i - 1]);
 
-		v[i] = temp + 1;
+		v[i] = prev + 1;
 	}
 
 	cout << v[n];
