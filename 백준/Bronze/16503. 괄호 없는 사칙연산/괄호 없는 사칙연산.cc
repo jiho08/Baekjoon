@@ -14,18 +14,8 @@ int calculate(const int a, const int b, const char x)
 	case '*':
 		return a * b;
 	case '/':
-	{
-		if (a < 0)
-			return -(-a / b);
-
-		if (b < 0)
-			return -(a / -b);
-
 		return a / b;
 	}
-	}
-
-	return 0;
 }
 
 int main()
