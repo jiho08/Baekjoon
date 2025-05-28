@@ -14,13 +14,11 @@ int main()
 
 	for (int i = 1; i <= t; ++i)
 	{
-		int n, a, b;
-		cin >> n >> a >> b;
-
-		vector<int> u(n), v(n);
+		int n, q;
+		cin >> n >> q >> q;
 
 		for (int j = 0; j < n; ++j)
-			cin >> u[j] >> v[j];
+			cin >> q >> q;
 
 		cout << "Material Management " << i << '\n';
 		cout << "Classification ---- End!\n";
