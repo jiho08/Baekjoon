@@ -18,7 +18,7 @@ int main()
 		++(t == 0 ? abs : (t == 1 ? yes : no));
 	}
 
-	if (abs >= n / 2 + 1)
+	if (abs >= (n % 2 == 0 ? n : n + 1) / 2)
 		cout << "INVALID";
 	else
 		cout << (yes > no ? "APPROVED" : "REJECTED");
