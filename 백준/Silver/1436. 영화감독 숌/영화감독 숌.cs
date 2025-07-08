@@ -1,15 +1,17 @@
-            int n = int.Parse(Console.ReadLine());
-            int s = 666, c = 0;
+int n = int.Parse(Console.ReadLine());
+            int s = 666;
+            int c = 0;
 
             while (true)
             {
                 if (Convert.ToString(s).Contains("666"))
-                    ++c;
-                        
+                {
+                    c++;
+                }
                 if (n == c)
+                {
                     break;
-                        
-                ++s;
+                }
+                s++;
             }
-
             Console.Write(s);
