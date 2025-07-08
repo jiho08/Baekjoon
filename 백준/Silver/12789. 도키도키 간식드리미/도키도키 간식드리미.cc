@@ -13,8 +13,6 @@ int main()
 	int n, count = 1;
 	cin >> n;
 
-	bool b = false;
-
 	stack<int> s;
 	vector<int> v(n);
 
@@ -22,32 +20,24 @@ int main()
 		cin >> i;
 
 	for (int i = 0; i < n; ++i)
+	{
+		while (!s.empty() && s.top() == count)
+		{
+			s.pop();
+			++count;
+		}
+
 		if (v[i] == count)
 			++count;
-		else if (!s.empty() && s.top() == count)
-		{
-			++count;
-			s.pop();
-			--i;
-		}
 		else
 			s.push(v[i]);
-
-	while (!s.empty())
-	{
-		const int t = s.top();
-
-		if (t == count)
-		{
-			++count;
-			s.pop();
-		}
-		else
-		{
-			b = true;
-			break;
-		}
 	}
 
-	cout << (b ? "Sad" : "Nice");
+	while (!s.empty() && s.top() == count)
+	{
+		s.pop();
+		++count;
+	}
+
+	cout << (s.empty() ? "Nice" : "Sad");
 }
