@@ -4,46 +4,36 @@
 
 using namespace std;
 
-
 int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 	cout.tie(nullptr);
+    
+	int n;
+	cin >> n;
 
-	int t;
-	cin >> t;
-
-	for (int i = 0; i < t; ++i)
+	while (n--)
 	{
-		int x = 0, y = 0;
+		bool b = false;
+		stack<int> st;
 		string s;
 		cin >> s;
 
-		bool b = true;
-
-		stack<char> k;
-
-		for (char i : s)
-		{
-			if (i == '(')
+		for (const auto& a : s)
+			if (a == '(')
+				st.push(1);
+			else if (a == ')')
 			{
-				k.push(i);
-				++x;
-			}
-			else
-			{
-				if (k.empty())
+				if (st.empty())
 				{
-					b = false;
+					b = true;
 					break;
 				}
 
-				k.pop();
-				++y;
+				st.pop();
 			}
-		}
 
-		cout << (b && x == y ? "YES\n" : "NO\n");
+		cout << (st.empty() && !b ? "YES\n" : "NO\n");
 	}
 }
