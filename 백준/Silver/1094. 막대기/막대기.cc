@@ -1,6 +1,4 @@
-#include <algorithm>
 #include <iostream>
-#include <vector>
 
 using namespace std;
 
@@ -10,31 +8,16 @@ int main()
 	cin.tie(nullptr);
 	cout.tie(nullptr);
 
-	int x, sum = 0;
+	int x, cnt = 0;
 	cin >> x;
 
-	vector<int> sticks;
-	sticks.push_back(64);
-	sum += 64;
-
-	while (sum >= x)
+	while (x > 0)
 	{
-		if (sum == x)
-			break;
+		if (x % 2 == 1)
+			++cnt;
 
-		sort(sticks.begin(), sticks.end());
-
-		if (sum - (sticks[0] >> 1) >= x)
-		{
-			sum -= sticks[0] >> 1;
-			sticks[0] = sticks[0] >> 1;
-		}
-		else
-		{
-			sticks.push_back(sticks[0] >> 1);
-			sticks[0] = sticks[0] >> 1;
-		}
+		x /= 2;
 	}
 
-	cout << sticks.size();
+	cout << cnt;
 }
