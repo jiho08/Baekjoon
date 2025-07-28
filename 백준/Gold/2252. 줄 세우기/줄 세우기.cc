@@ -1,14 +1,6 @@
-#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <string>
-#include <cmath>
-#include <list>
-#include <set>
 #include <queue>
-#include <stack>
-#include <map>
-#include <array>
 
 using namespace std;
 
