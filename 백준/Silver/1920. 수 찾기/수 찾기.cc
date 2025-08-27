@@ -1,22 +1,15 @@
 #include <algorithm>
 #include <iostream>
-#include <cmath>
-#include <list>
-#include <string>
-#include <set>
-#include <vector>
-#include <queue>
-#include <stack>
 
 using namespace std;
 
 int BinarySearch(int* arr, int t, int n)
 {
-	int left = 0, right = n - 1;
+	int left = 0, right = n - 1, mid;
 
 	while (left <= right)
 	{
-		int mid = (left + right) / 2;
+		mid = (left + right) / 2;
 
 		if (arr[mid] == t)
 			return 1;
@@ -52,4 +45,7 @@ int main()
 
 	for (int i = 0; i < m; ++i)
 		cout << BinarySearch(a, b[i], n) << '\n';
+
+	delete[] a;
+	delete[] b;
 }
