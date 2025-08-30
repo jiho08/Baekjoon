@@ -11,7 +11,7 @@ int main()
 	cin.tie(nullptr);
 	cout.tie(nullptr);
 
-	int n, m, ans = 0, max = 2147483647;
+	int n, m, ans = 0, min = 2147483647;
 	cin >> n >> m;
 
 	vector<vector<int>> graph(n + 1);
@@ -50,9 +50,9 @@ int main()
 		for (int j = 1; j <= n; ++j)
 			sum += dist[j];
 
-		if (sum < max)
+		if (sum < min)
 		{
-			max = sum;
+			min = sum;
 			ans = i;
 		}
 	}
