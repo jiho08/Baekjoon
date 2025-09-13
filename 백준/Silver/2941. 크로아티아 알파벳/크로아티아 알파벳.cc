@@ -25,7 +25,6 @@ int main()
 			if (s[i + 1] == 'z' && s[i + 2] == '=')
 				i += 2;
 			else if (s[i + 1] == '-')
-			
 				++i;
 		}
 		else if (s[i] == 'l' || s[i] == 'n')
