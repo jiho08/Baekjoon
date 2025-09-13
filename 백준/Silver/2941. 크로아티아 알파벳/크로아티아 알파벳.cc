@@ -19,34 +19,27 @@ int main()
 		{
 			if (s[i + 1] == '=' || s[i + 1] == '-')
 				++i;
-
-			++cnt;
 		}
 		else if (s[i] == 'd')
 		{
 			if (s[i + 1] == 'z' && s[i + 2] == '=')
 				i += 2;
 			else if (s[i + 1] == '-')
+			
 				++i;
-
-			++cnt;
 		}
 		else if (s[i] == 'l' || s[i] == 'n')
 		{
 			if (s[i + 1] == 'j')
 				++i;
-
-			++cnt;
 		}
 		else if (s[i] == 's' || s[i] == 'z')
 		{
 			if (s[i + 1] == '=')
 				++i;
-
-			++cnt;
 		}
-		else
-			++cnt;
+
+		++cnt;
 	}
 
 	cout << cnt;
