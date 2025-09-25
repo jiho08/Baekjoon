@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 
 using namespace std;
 
@@ -13,16 +12,19 @@ int main()
 	cin >> n;
 
 	for (int i = 1; i <= n; ++i)
-		if (to_string(i).find('3') != string::npos
-			|| to_string(i).find('6') != string::npos
-			|| to_string(i).find('9') != string::npos)
+	{
+		int t = i;
+
+		while (t > 0)
 		{
+			const int x = t % 10;
 
-			++cnt;
-
-			if (i == 33 || i == 36 || i == 39)
+			if (x == 3 || x == 6 || x == 9)
 				++cnt;
+
+			t /= 10;
 		}
+	}
 
 	cout << cnt;
 }
