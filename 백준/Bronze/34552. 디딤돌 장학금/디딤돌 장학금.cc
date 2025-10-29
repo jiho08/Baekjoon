@@ -1,16 +1,5 @@
-#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <string>
-#include <cmath>
-#include <list>
-#include <queue>
-#include <stack>
-#include <map>
-#include <set>
-#include <array>
-#include <unordered_map>
-#include <unordered_set>
 
 using namespace std;
 
