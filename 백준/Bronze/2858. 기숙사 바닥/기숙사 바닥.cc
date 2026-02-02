@@ -1,4 +1,3 @@
-#include <algorithm>
 #include <iostream>
 
 using namespace std;
@@ -9,31 +8,19 @@ int main()
 	cout.tie(nullptr);
 	cin.tie(nullptr);
 
-	int r, b;
+	int r, b, cnt = 1;
 	cin >> r >> b;
-
-	int c = 1;
 
 	while (true)
 	{
-		if ((r + b) % c == 0)
+		if ((r + b) % cnt == 0)
 		{
-			int l = c;
-			int w = (r + b) / c;
+			const int l = cnt, w = (r + b) / cnt;
 			int x = 0, y = 0;
 
-			bool flag = false;
-
 			for (int i = 0; i < w; ++i)
-			{
 				for (int j = 0; j < l; ++j)
-				{
-					if (i == 0 || j == 0 || i == w - 1 || j == l - 1)
-						++x;
-					else
-						++y;
-				}
-			}
+					++(i == 0 || j == 0 || i == w - 1 || j == l - 1 ? x : y);
 
 			if (x == r && y == b)
 			{
@@ -42,6 +29,6 @@ int main()
 			}
 		}
 
-		++c;
+		++cnt;
 	}
 }
