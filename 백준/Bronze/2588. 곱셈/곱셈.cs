@@ -1,0 +1,12 @@
+int n = int.Parse(Console.ReadLine());
+            int m = int.Parse(Console.ReadLine());
+            int p = m % 10;
+            int a = n * p;
+            Console.WriteLine(a);
+            p = (m % 100) / 10;
+            a = n * p;
+            Console.WriteLine(a);
+            p = m / 100;
+            a = n * p;
+            Console.WriteLine(a);
+            Console.WriteLine(n * m);
